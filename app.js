@@ -21,9 +21,11 @@ function calculateResults(e){
     const monthly = (principal*x*calculatedInterest)/(x-1);
 
     if(isFinite(monthly)){
-        
+        monthlyPayment.value = monthly.toFixed(2);
+        totalPayments.value = (monthly * calculatedInterest).toFixed(2);
+        totalInterest.value = ((monthly * calculatedInterest) - principal).toFixed(2);
     }else {
-            
+            console.log('Please check your numbers');
     }
 
     e.preventDefault();
