@@ -44,6 +44,10 @@ function calculateResults(){
 }
 
 function showError(error){
+     //hide loader
+     document.getElementById('loading').style.display = 'none';
+    //hide results
+       document.getElementById('results').style.display = 'none';
     //create div
     const errorDiv = document.createElement('div');
 
