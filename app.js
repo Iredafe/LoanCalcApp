@@ -1,8 +1,15 @@
 //Listen for submit
-document.getElementById('loan-form').addEventListener('submit', calculateResults)
+document.getElementById('loan-form').addEventListener('submit', function(e){
+
+    //hide results
+    document.getElementById('results').style.display = 'none';
+    //show loader
+    document.getElementById('loading').style.display = 'block';
+    e.preventDefault();
+})
 
 
-function calculateResults(e){
+function calculateResults(){
     //UI vars
     const amount = document.getElementById('amount');
     const interest = document.getElementById('interest');
@@ -27,8 +34,6 @@ function calculateResults(e){
     }else {
             showError('Please check your numbers');
     }
-
-    e.preventDefault();
 }
 
 function showError(error){
